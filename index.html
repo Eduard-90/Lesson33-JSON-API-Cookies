@@ -6,5 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 33</title>
   </head>
-  <body></body>
+  <body>
+    <input type="text" />
+
+    <script>
+      // Task 1
+
+      function showAdminName(data) {
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].isAdmin) {
+            return console.log(`Admin is: ${data[i].name}`);
+          }
+        }
+        console.log(`no admin`);
+      }
+
+      fetch("http://127.0.0.1:5500/Lesson%2033/home-work-data.json")
+        .then((response) => response.json())
+        .then((data) => showAdminName(data));
+
+      // Task 2
+
+      //   let nikola = { firstName: "Nikola", lastName: "Tesla" };
+      //   let bob = { firstName: "Bob" };
+      //   let mike = { lastName: "Smith" };
+      //   let michael = {};
+
+      //   let getFullName = function (user) {
+      //     return `${user.firstName} ${user.lastName}`;
+      //   };
+
+      //   getFullName = new Proxy(getFullName, {
+      //     apply(target, thisArg, args) {
+      //       let user = args[0];
+      //       if (!user.firstName && !user.lastName) {
+      //         return "No name";
+      //       }
+      //       if (!user.firstName) {
+      //         return `${user.lastName}`;
+      //       }
+      //       if (!user.lastName) {
+      //         return `${user.firstName}`;
+      //       }
+      //       return target.apply(thisArg, args);
+      //     },
+      //   });
+
+      //   console.log(getFullName(nikola));
+      //   console.log(getFullName(bob));
+      //   console.log(getFullName(mike));
+      //   console.log(getFullName(michael));
+
+      // Task 3
+
+      //   let users = [
+      //     { name: "Nikola", age: 18, id: 1 },
+      //     { name: "Bob", age: 25, id: 2 },
+      //     { name: "Mike", age: 32, id: 3 },
+      //   ];
+
+      //   localStorage.setItem("users", JSON.stringify(users));
+
+      //   function sayHelloToUser(id) {
+      //     let savedUsers = JSON.parse(localStorage.getItem("users"));
+      //     let user = savedUsers.find((user) => user.id === id);
+      //     if (user) {
+      //       console.log(`Hello: ${user.name}`);
+      //     } else {
+      //       console.log("User not found");
+      //     }
+      //   }
+
+      //   sayHelloToUser(3);
+
+      // Task 4
+
+      // const input = document.querySelector("input");
+
+      // input.addEventListener("input", function () {
+      //   document.cookie = `input=${input.value}`;
+      // });
+
+      // window.addEventListener("load", function () {
+      //   const cookies = document.cookie;
+      //   const savedInputCookie = cookies
+      //     .split(";")
+      //     .find((cookie) => cookie.trim().startsWith("input="));
+      //   if (savedInputCookie) {
+      //     const savedInput = savedInputCookie.split("=")[1];
+      //     input.value = savedInput;
+      //   }
+      // });
+    </script>
+  </body>
 </html>
